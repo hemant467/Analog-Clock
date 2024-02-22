@@ -1,0 +1,123 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background: #0938f3;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+}
+
+.container .clock {
+  display: flex;
+  height: 400px;
+  width: 400px;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  background: rgb(119, 238, 8);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1), 0 25px 45px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.clock label {
+  position: absolute;
+  inset: 20px;
+  text-align: center;
+  transform: rotate(calc(var(--i) * (360deg / 12)));
+}
+
+.clock label span {
+  display: inline-block;
+  font-size: 30px;
+  font-weight: 600;
+  color: #000;
+  transform: rotate(calc(var(--i) * (-360deg / 12)));
+}
+
+.txt{
+   position: absolute;
+   display: inline-block;
+   top: 25%;
+   text-align: center;
+}
+
+.txt h4{
+   font-size: 12px;
+   color: #000000c1;
+   z-index: 0;
+}
+
+.txt h5{
+  position: absolute;
+   width: 80%;
+   top: 45px;
+   left: 50%;
+   transform: translate(-50%,-50%);
+   padding: 2px;
+   font-size: 8px;
+   font-weight: 500;
+   background-color: rgb(5, 5, 5);
+   border-radius: 5px;
+   color: rgb(250, 205, 4);
+   z-index: 0;
+}
+
+.txt i{
+  margin-left: 5px;
+  color: #fff;
+}
+
+.container .indicator {
+  position: absolute;
+  height: 10px;
+  width: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.indicator::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  z-index: 110;
+  background: #000;
+  border: 4px solid red;
+}
+
+.indicator .hand {
+  position: absolute;
+  height: 130px;
+  width: 4px;
+  bottom: 0;
+  z-index: 100;
+  border-radius: 25px;
+  transform-origin: bottom;
+  background: red;
+}
+
+.hand.minute {
+  height: 120px;
+  width: 5px;
+  background: rgb(240, 137, 2);
+}
+
+.hand.hour {
+  height: 100px;
+  width: 8px;
+  background: rgb(240, 137, 2);
+}
